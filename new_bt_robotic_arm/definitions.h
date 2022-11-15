@@ -3,15 +3,51 @@
  *  DE ACORDO COM A PREFERENCIA DO USUARIO!
  ***************************************************/
 
+//Total de motores
+#define tMot 6 
+
+// Intervalo entre leituras em milisegundos
+#define time_delay 50
+
+// Incrementos iniciais em angulos
+#define i_speed 1
+
+// Velocidade maxima e minima
+#define velocidade_max 5
+#define velocidade_min 1
+
 /*************************************************
  * Definições das Funções de Ativação
  *************************************************/
+ 
 // Define os eventos que são recebidos pelo bluetooth
 // EX: if (characterRecebido == "base_dir;")
-#define motor1_direita "base_dir;"
-#define motor1_esquerda "base_esq;"
-#define motor2_direita "base_dir;"
-#define motor2_esquerda "base_esq;"
+
+#define m1_direita "base_dir;"
+#define m1_esquerda "base_esq;"
+
+#define m2_direita "sup1_dir;"
+#define m2_esquerda "sup1_esq;"
+
+#define m3_direita "sup2_dir;"
+#define m3_esquerda "sup2_esq;"
+
+#define m4_direita "garra_rot_dir;"
+#define m4_esquerda "garra_rot_esq;"
+
+#define m5_direita "gic;"  // garra inclinação cima
+#define m5_esquerda "gib;" // garra inclinação baixo
+
+#define m6_direita "ga;"  // garra abrir
+#define m6_esquerda "gf;" // garra fechar
+
+// Quantidade de eventos que NÃO são dos servomotores
+// Se adicionar mais eventos mude "otherkeys" para o numero de eventos novos!
+#define otherKeysAmmount 2 
+
+#define aumentar_vel "mais_vel;"
+#define diminuir_vel "menos_vel;"
+// Para enviar uma velocidade especifica utilize "vel_N;" [ EX: "vel_10;" ]
 
 /*************************************************
  * Definições Pinos Seriais
@@ -71,5 +107,5 @@
 #define min_mot5 0
 
 // Abertura da garra
-#define max_mot6 180
+#define max_mot6 90
 #define min_mot6 0
